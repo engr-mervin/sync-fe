@@ -1,0 +1,22 @@
+li {
+    display: flex;
+    width : 40rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #777;
+    border-radius: 5px;
+    padding: 1.5rem;
+}
+
+.todoCard__text-box{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.todoCard__action-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
