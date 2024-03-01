@@ -1,20 +1,17 @@
-import { MouseEventHandler } from 'react';
-import './ActionButton.css';
+import { MouseEventHandler } from "react";
+import "./ActionButton.css";
 
-interface ActionButtonProps{
-    children: React.ReactNode;
-    onClick: () => void;
+interface ActionButtonProps {
+  children: React.ReactNode;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-
-function ActionButton(props: ActionButtonProps){
-
-    const clickHandler:MouseEventHandler<HTMLButtonElement> = function(event){
-        event.preventDefault();
-        props.onClick();
-    }
-
-    return <button type='button' onClick={clickHandler}>{props.children}</button>
+function ActionButton(props: ActionButtonProps) {
+  return (
+    <button type="button" onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
 }
 
 export default ActionButton;
