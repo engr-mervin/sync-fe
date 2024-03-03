@@ -3,11 +3,8 @@ import { ITodo } from "../types/types";
 import { IAction } from "../types/types";
 
 class SyncDB extends Dexie {
-  // Declare implicit table properties.
-  // (just to inform Typescript. Instantiated by Dexie in stores() method)
-  todos!: Dexie.Table<ITodo, string>; // number = type of the primkey
-  actions!: Dexie.Table<IAction, string>; // number = type of the primkey
-  //...other tables goes here...
+  todos!: Dexie.Table<ITodo, string>;
+  actions!: Dexie.Table<IAction, string>;
 
   constructor() {
     super("SyncDB");

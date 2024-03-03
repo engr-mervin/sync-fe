@@ -1,16 +1,16 @@
-button{
-    width: 4rem;
-    height: 4rem;
-    border-radius: 3px;
-    border: none;
-    font-size: 1.2rem;
-    font-family: inherit;
-    background-color: #eee;
-    cursor: pointer;
-    font-weight: 500;
+button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-button:hover{
-    transform: scale(1.05);
-    transition: all 300ms;
+button:hover {
+  transform: scale(1.05);
+  transition: all 300ms;
 }

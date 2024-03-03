@@ -4,6 +4,10 @@ import ActionButton from "./ActionButton";
 import { syncDB } from "../db/indexedDB";
 import { MouseEventHandler } from "react";
 import { ITodoStatus } from "../types/types";
+import CheckBoxChecked from "./icons/CheckBoxChecked";
+import CheckBoxUnchecked from "./icons/CheckBoxUnchecked";
+import Restore from "./icons/Restore";
+import Trash from "./icons/Trash";
 
 interface TodoCardProps {
   title: string;
@@ -26,7 +30,7 @@ function TodoCard(props: TodoCardProps) {
     }
   };
 
-  const status = props.isActive ? (props.status === "active" ? "Mark done" : "Mark active") : "Restore";
+  const status = props.isActive ? props.status === "active" ? <CheckBoxUnchecked /> : <CheckBoxChecked /> : <Restore />;
 
   const onUpdateHandler: MouseEventHandler<HTMLButtonElement> = async function (event) {
     event.preventDefault();
@@ -53,7 +57,9 @@ function TodoCard(props: TodoCardProps) {
       </div>
       <div className="todoCard__action-box">
         <ActionButton onClick={onUpdateHandler}>{status}</ActionButton>
-        <ActionButton onClick={onDeleteHandler}>Delete</ActionButton>
+        <ActionButton onClick={onDeleteHandler}>
+          <Trash />
+        </ActionButton>
       </div>
     </li>
   );
