@@ -1,4 +1,4 @@
-const SVGIcon = function () {
+const CheckBoxChecked = function () {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className="ionicon" viewBox="0 0 512 512">
       <path
@@ -25,4 +25,4 @@ const SVGIcon = function () {
   );
 };
 
-export default SVGIcon;
+export default CheckBoxChecked;

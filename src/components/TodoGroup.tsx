@@ -1,7 +1,10 @@
 import { ITodo } from "../types/types";
 import TodoCard from "./TodoCard";
+import ChevronDown from "./icons/ChevronDown";
 
 import "./TodoGroup.css";
+import { useState } from "react";
+import ChevronUp from "./icons/ChevronUp";
 
 interface TodoGroupProps {
   groupName: string;
@@ -10,10 +13,22 @@ interface TodoGroupProps {
 }
 
 function TodoGroup(props: TodoGroupProps) {
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+
   return (
-    <div className="todo-group__box">
-      <h2>{props.groupName}</h2>
-      <ul>
+    <div className={isCollapsed ? "todo-group__box collapse" : "todo-group__box"}>
+      <div
+        className="todo-title__box"
+        onClick={() => {
+          setIsCollapsed((current) => {
+            return !current;
+          });
+        }}
+      >
+        <h2>{props.groupName}</h2>
+        {isCollapsed ? <ChevronDown /> : <ChevronUp />}
+      </div>
+      <ul className={isCollapsed ? "collapse" : ""}>
         {props.todos
           ? props.todos.map((todo) => (
               <TodoCard

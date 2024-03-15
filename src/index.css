@@ -10,6 +10,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-primary-1: #f1f4ff;
+  --color-primary-2: #a2a2a1;
+
+  --color-text: #333;
+  --color-white: #fff;
 }
 
 html {
@@ -26,6 +32,7 @@ html {
 }
 
 body {
+  background-color: var(--color-white);
   box-sizing: border-box;
   display: flex;
   place-items: center;
@@ -34,7 +41,9 @@ body {
   font-size: 1.4rem;
 }
 
+svg,
+button,
 svg path,
 svg rect {
-  stroke: #eee;
+  color: inherit;
 }
